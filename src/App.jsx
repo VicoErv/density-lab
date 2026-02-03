@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Activity, BarChart, AreaChart, Target, Layers, Info, Wind, Database, Zap, RefreshCw, Equal } from 'lucide-react';
+import { Activity, BarChart, AreaChart, Target, Layers, Info, Wind, Database, Zap, RefreshCw, Equal, Filter } from 'lucide-react';
 import Gaussian1D from './labs/Gaussian1D';
 import SamplingConvergence from './labs/SamplingConvergence';
 import CDFIntegration from './labs/CDFIntegration';
@@ -9,6 +9,7 @@ import ScoreMatching from './labs/ScoreMatching';
 import PseudoLikelihood from './labs/PseudoLikelihood';
 import ForwardDiffusion from './labs/ForwardDiffusion';
 import ISMvsESM from './labs/ISMvsESM';
+import DenoisingScoreMatching from './labs/DenoisingScoreMatching';
 
 function App() {
   const [activeTab, setActiveTab] = useState('gaussian');
@@ -125,6 +126,14 @@ function App() {
               icon={<Equal size={24} color="#f472b6" />}
             >
               <ISMvsESM />
+            </LabCard>
+
+            <LabCard
+              title="Denoising Score Matching"
+              description="The foundation of Diffusion. Learning to guess how to move from noisy x̃ back to clean x."
+              icon={<Filter size={24} color="#f472b6" />}
+            >
+              <DenoisingScoreMatching />
             </LabCard>
           </div>
         )}
