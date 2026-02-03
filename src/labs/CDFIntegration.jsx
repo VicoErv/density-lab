@@ -9,6 +9,7 @@ import {
     Tooltip,
     Filler,
     Legend,
+    LineController
 } from 'chart.js';
 import { Line } from 'react-chartjs-2';
 
@@ -20,7 +21,8 @@ ChartJS.register(
     Title,
     Tooltip,
     Filler,
-    Legend
+    Legend,
+    LineController
 );
 
 const CDFIntegration = () => {

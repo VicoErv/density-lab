@@ -9,6 +9,8 @@ import {
     Tooltip,
     Filler,
     Legend,
+    LineController,
+    ScatterController
 } from 'chart.js';
 import { Line } from 'react-chartjs-2';
 
@@ -20,7 +22,9 @@ ChartJS.register(
     Title,
     Tooltip,
     Filler,
-    Legend
+    Legend,
+    LineController,
+    ScatterController
 );
 
 const LikelihoodScorer = () => {

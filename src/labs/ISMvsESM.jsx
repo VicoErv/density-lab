@@ -8,7 +8,8 @@ import {
     Title,
     Tooltip,
     Legend,
-    Filler
+    Filler,
+    LineController
 } from 'chart.js';
 import { Line } from 'react-chartjs-2';
 
@@ -20,7 +21,8 @@ ChartJS.register(
     Title,
     Tooltip,
     Legend,
-    Filler
+    Filler,
+    LineController
 );
 
 const ISMvsESM = () => {

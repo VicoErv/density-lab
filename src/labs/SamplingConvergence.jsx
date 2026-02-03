@@ -9,6 +9,8 @@ import {
     Title,
     Tooltip,
     Legend,
+    BarController,
+    LineController
 } from 'chart.js';
 import { Chart as ReactChart } from 'react-chartjs-2';
 
@@ -20,7 +22,9 @@ ChartJS.register(
     PointElement,
     Title,
     Tooltip,
-    Legend
+    Legend,
+    BarController,
+    LineController
 );
 
 const SamplingConvergence = () => {
