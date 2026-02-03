@@ -26,6 +26,10 @@ A premium, interactive web application designed to build a deep intuition for co
 - **Intuition**: Covariance is Geometry.
 - **Interactive**: Adjust correlation ($\rho$) and observe how the density "hills" tilt and stretch into ellipses.
 
+### 6. Score Function & Matching
+- **Intuition**: $s(x) = \nabla \log p(x)$ points to the peak.
+- **Interactive**: Watch the "score field" (vector arrows) pull points toward the data mode. Essential for understanding Diffusion Models and Energy-Based Models.
+
 ## 🚀 Tech Stack
 - **Framework**: React (Vite)
 - **Styling**: Vanilla CSS (Modern design system, Dark Mode, Glassmorphism)

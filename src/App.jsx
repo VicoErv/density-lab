@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { Activity, BarChart, AreaChart, Target, Layers, Info } from 'lucide-react';
+import { Activity, BarChart, AreaChart, Target, Layers, Info, Wind } from 'lucide-react';
 import Gaussian1D from './labs/Gaussian1D';
 import SamplingConvergence from './labs/SamplingConvergence';
 import CDFIntegration from './labs/CDFIntegration';
 import LikelihoodScorer from './labs/LikelihoodScorer';
 import Multivariate2D from './labs/Multivariate2D';
+import ScoreMatching from './labs/ScoreMatching';
 
 function App() {
   return (
@@ -15,44 +16,52 @@ function App() {
       </header>
 
       <div className="lab-grid">
-        <LabCard 
-          title="The First Mental Shift" 
+        <LabCard
+          title="The First Mental Shift"
           description="Density is height, Probability is area. Watch how µ and σ reshape the curve while maintaining total area."
           icon={<Activity size={24} color="var(--accent-primary)" />}
         >
           <Gaussian1D />
         </LabCard>
 
-        <LabCard 
-          title="Sampling Convergence" 
+        <LabCard
+          title="Sampling Convergence"
           description="Density is what sampling frequency becomes in the limit. Watch N random samples form the curve."
           icon={<BarChart size={24} color="var(--accent-secondary)" />}
         >
           <SamplingConvergence />
         </LabCard>
 
-        <LabCard 
-          title="CDF & Area" 
+        <LabCard
+          title="CDF & Area"
           description="Observe probability through the Cumulative Distribution Function. Area under the curve is probability."
           icon={<AreaChart size={24} color="var(--accent-success)" />}
         >
           <CDFIntegration />
         </LabCard>
 
-        <LabCard 
-          title="Likelihood Scoring" 
+        <LabCard
+          title="Likelihood Scoring"
           description="Drag the point to see its likelihood score. This is how anomaly detection works in practice."
           icon={<Target size={24} color="var(--accent-warning)" />}
         >
           <LikelihoodScorer />
         </LabCard>
 
-        <LabCard 
-          title="Multivariate Contours" 
+        <LabCard
+          title="Multivariate Contours"
           description="In 2D, density becomes hills and equal-density becomes ellipses. Experience covariance as geometry."
           icon={<Layers size={24} color="#a855f7" />}
         >
           <Multivariate2D />
+        </LabCard>
+
+        <LabCard
+          title="Score Matching"
+          description="The Score Function ∇log p(x) acts as a force field pointing toward the mode. The foundation of Diffusion Models."
+          icon={<Wind size={24} color="#f472b6" />}
+        >
+          <ScoreMatching />
         </LabCard>
 
         <section className="card info-card">
