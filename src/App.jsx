@@ -130,31 +130,35 @@ function App() {
         )}
 
         {activeTab === 'diffusion' && (
-          <div className="lab-grid fade-in">
-            <LabCard
-              title="Forward Diffusion"
-              description="Watch structured data dissolve into noise. The 'Forward Process' of Diffusion Models."
-              icon={<RefreshCw size={24} color="#06b6d4" />}
-            >
-              <ForwardDiffusion />
-            </LabCard>
+          <>
+            <div className="lab-grid fade-in">
+              <LabCard
+                title="Forward Diffusion"
+                description="Watch structured data dissolve into noise. The 'Forward Process' of Diffusion Models."
+                icon={<RefreshCw size={24} color="#06b6d4" />}
+              >
+                <ForwardDiffusion />
+              </LabCard>
 
-            <LabCard
-              title="Denoising Score Matching"
-              description="SMDAE (Vincent, 2011). Learning the score by reversing Gaussian corruption."
-              icon={<Filter size={24} color="#f472b6" />}
-            >
-              <DenoisingScoreMatching />
-            </LabCard>
+              <LabCard
+                title="Denoising Score Matching"
+                description="SMDAE (Vincent, 2011). Learning the score by reversing Gaussian corruption."
+                icon={<Filter size={24} color="#f472b6" />}
+              >
+                <DenoisingScoreMatching />
+              </LabCard>
+            </div>
 
-            <LabCard
-              title="2D Point Cloud Diffusion"
-              description="The 'Hello World' of generative models. Watch points evolve from noise into shapes."
-              icon={<Sparkles size={24} color="#10b981" />}
-            >
-              <PointCloudDiffusion />
-            </LabCard>
-          </div>
+            <div className="lab-grid fade-in" style={{ gridTemplateColumns: '1fr' }}>
+              <LabCard
+                title="2D Point Cloud Diffusion"
+                description="The 'Hello World' of generative models. Watch points evolve from noise into shapes."
+                icon={<Sparkles size={24} color="#10b981" />}
+              >
+                <PointCloudDiffusion />
+              </LabCard>
+            </div>
+          </>
         )}
       </div>
     </div>
