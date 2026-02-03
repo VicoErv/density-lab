@@ -97,7 +97,7 @@ const ForwardDiffusion = () => {
                 }}>
                     {sigma < 50 ? "Structured Data" : sigma < 150 ? "Corrupted Manifold" : "Pure Gaussian Noise"}
                     <div style={{ fontWeight: 'normal', opacity: 0.8, fontSize: '0.7rem' }}>
-                        $x_t = x_0 + \epsilon, \epsilon \sim \mathcal{N}(0, \sigma^2 I)$
+                        {"$x_t = x_0 + \\epsilon, \\epsilon \\sim \\mathcal{N}(0, \\sigma^2 I)$"}
                     </div>
                 </div>
             </div>
