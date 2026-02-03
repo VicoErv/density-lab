@@ -117,12 +117,26 @@ const ISMvsESM = () => {
                 </div>
 
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.5rem', marginTop: '0.5rem' }}>
-                    <div style={{ background: 'rgba(244, 114, 182, 0.1)', padding: '0.5rem', borderRadius: '0.5rem', textAlign: 'center' }}>
-                        <div style={{ fontSize: '0.7rem', color: 'var(--text-secondary)' }}>ESM Objective</div>
+                    <div style={{ background: 'rgba(244, 114, 182, 0.1)', padding: '0.5rem', borderRadius: '0.5rem', textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                        <div
+                            style={{ fontSize: '0.7rem' }}
+                            ref={(el) => {
+                                if (el && window.katex) {
+                                    window.katex.render(`J_{ESM}`, el, { throwOnError: false });
+                                }
+                            }}
+                        />
                         <div style={{ fontWeight: 800, color: '#f472b6' }}>{data.totalESM.toFixed(4)}</div>
                     </div>
-                    <div style={{ background: 'rgba(59, 130, 246, 0.1)', padding: '0.5rem', borderRadius: '0.5rem', textAlign: 'center' }}>
-                        <div style={{ fontSize: '0.7rem', color: 'var(--text-secondary)' }}>ISM (Score Matching)</div>
+                    <div style={{ background: 'rgba(59, 130, 246, 0.1)', padding: '0.5rem', borderRadius: '0.5rem', textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                        <div
+                            style={{ fontSize: '0.7rem' }}
+                            ref={(el) => {
+                                if (el && window.katex) {
+                                    window.katex.render(`J_{ISM}`, el, { throwOnError: false });
+                                }
+                            }}
+                        />
                         <div style={{ fontWeight: 800, color: 'var(--accent-primary)' }}>{(data.totalISM + 0.5).toFixed(4)}*</div>
                     </div>
                 </div>

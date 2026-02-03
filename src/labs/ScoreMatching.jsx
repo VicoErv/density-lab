@@ -163,13 +163,20 @@ const ScoreMatching = () => {
                     background: 'rgba(244, 114, 182, 0.1)',
                     padding: '0.6rem',
                     borderRadius: '0.5rem',
-                    fontSize: '0.8rem',
-                    color: '#f472b6',
-                    textAlign: 'center',
-                    fontWeight: 'bold'
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                    gap: '0.2rem'
                 }}>
-                    Score s(x) = ∇ log p(x) = {(score).toFixed(3)}
-                    <div style={{ fontWeight: 'normal', opacity: 0.8, fontSize: '0.7rem' }}>
+                    <div
+                        style={{ fontSize: '0.85rem', color: '#f472b6', fontWeight: 'bold' }}
+                        ref={(el) => {
+                            if (el && window.katex) {
+                                window.katex.render(`s(x) = \\nabla \\log p(x) = ${score.toFixed(3)}`, el, { throwOnError: false });
+                            }
+                        }}
+                    />
+                    <div style={{ fontWeight: 'normal', opacity: 0.8, fontSize: '0.7rem', color: '#f472b6' }}>
                         Points toward the data mode!
                     </div>
                 </div>

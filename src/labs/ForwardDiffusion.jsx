@@ -96,9 +96,14 @@ const ForwardDiffusion = () => {
                     fontWeight: 'bold'
                 }}>
                     {sigma < 50 ? "Structured Data" : sigma < 150 ? "Corrupted Manifold" : "Pure Gaussian Noise"}
-                    <div style={{ fontWeight: 'normal', opacity: 0.8, fontSize: '0.7rem' }}>
-                        {"$x_t = x_0 + \\epsilon, \\epsilon \\sim \\mathcal{N}(0, \\sigma^2 I)$"}
-                    </div>
+                    <div
+                        style={{ fontWeight: 'normal', opacity: 1, fontSize: '0.75rem', marginTop: '0.2rem' }}
+                        ref={(el) => {
+                            if (el && window.katex) {
+                                window.katex.render(`x_t = x_0 + \\epsilon, \\epsilon \\sim \\mathcal{N}(0, \\sigma^2 I)`, el, { throwOnError: false });
+                            }
+                        }}
+                    />
                 </div>
             </div>
         </div>

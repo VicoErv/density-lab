@@ -186,21 +186,44 @@ const DenoisingScoreMatching = () => {
                 </div>
 
                 <div style={{
-                    display: 'flex',
-                    gap: '1rem',
-                    alignItems: 'center',
                     background: 'rgba(244, 114, 182, 0.05)',
                     padding: '0.75rem',
                     borderRadius: '0.75rem',
-                    border: '1px solid rgba(244, 114, 182, 0.1)'
+                    border: '1px solid rgba(244, 114, 182, 0.1)',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                    gap: '0.5rem'
                 }}>
-                    <div className="control-group" style={{ flex: 1, margin: 0 }}>
-                        <label className="control-label">Model θ <span className="control-value" style={{ color: '#f472b6' }}>{modelTheta.toFixed(2)}</span></label>
+                    <div
+                        style={{ fontSize: '0.75rem', opacity: 0.6 }}
+                        ref={(el) => {
+                            if (el && window.katex) {
+                                window.katex.render(
+                                    `J = \\mathbb{E}_{q_\\sigma} [ \\frac{1}{2} \\| \\psi(\\tilde{x};\\theta) - \\nabla \\log q_\\sigma(\\tilde{x}|x) \\|^2 ]`,
+                                    el,
+                                    { throwOnError: false }
+                                );
+                            }
+                        }}
+                    />
+                    <div
+                        style={{ fontSize: '0.85rem' }}
+                        ref={(el) => {
+                            if (el && window.katex) {
+                                window.katex.render(
+                                    `J = \\frac{1}{2} \\| ${modelScore.toFixed(2)} - (${targetScore.toFixed(2)}) \\|^2 = ${dsmLoss.toFixed(4)}`,
+                                    el,
+                                    { throwOnError: false }
+                                );
+                            }
+                        }}
+                    />
+                    <div className="control-group" style={{ width: '100%', margin: 0 }}>
+                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                            <label className="control-label" style={{ margin: 0 }}>Model θ <span className="control-value" style={{ color: '#f472b6' }}>{modelTheta.toFixed(2)}</span></label>
+                        </div>
                         <input type="range" min="0" max="2" step="0.01" value={modelTheta} onChange={(e) => setModelTheta(parseFloat(e.target.value))} style={{ accentColor: '#f472b6' }} />
-                    </div>
-                    <div style={{ textAlign: 'right', minWidth: '80px' }}>
-                        <div style={{ fontSize: '0.6rem', color: 'var(--text-secondary)', textTransform: 'uppercase' }}>Loss</div>
-                        <div style={{ fontWeight: 800, color: '#f472b6' }}>{dsmLoss.toFixed(4)}</div>
                     </div>
                 </div>
             </div>
