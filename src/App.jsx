@@ -8,6 +8,7 @@ import Multivariate2D from './labs/Multivariate2D';
 import ScoreMatching from './labs/ScoreMatching';
 import PseudoLikelihood from './labs/PseudoLikelihood';
 import ForwardDiffusion from './labs/ForwardDiffusion';
+import ISMvsESM from './labs/ISMvsESM';
 
 function App() {
   const [activeTab, setActiveTab] = useState('gaussian');
@@ -21,13 +22,13 @@ function App() {
 
       <nav className="tabs-container animate-fade-in">
         <button
-          className={`tab - button ${activeTab === 'gaussian' ? 'active' : ''} `}
+          className={`tab-button ${activeTab === 'gaussian' ? 'active' : ''}`}
           onClick={() => setActiveTab('gaussian')}
         >
           Gaussian Foundations
         </button>
         <button
-          className={`tab - button ${activeTab === 'score' ? 'active' : ''} `}
+          className={`tab-button ${activeTab === 'score' ? 'active' : ''}`}
           onClick={() => setActiveTab('score')}
         >
           Score-based Modeling

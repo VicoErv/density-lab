@@ -38,6 +38,10 @@ A premium, interactive web application designed to build a deep intuition for co
 - **Intuition**: Structured patterns dissolve into Gaussian noise.
 - **Interactive**: Corrupt a "data manifold" with increasing $\sigma$ levels to visualize the forward process used in SDE and Diffusion models.
 
+### 9. ISM vs ESM Identity
+- **Intuition**: $J_{ESM}(\theta) = J_{ISM}(\theta) + C$.
+- **Interactive**: Minimize the Implicit Score Matching objective without ever knowing the ground-truth density. Watch how matching the "divergence" of the score field is equivalent to matching the vectors.
+
 ## 🚀 Tech Stack
 - **Framework**: React (Vite)
 - **Styling**: Vanilla CSS (Modern design system, Dark Mode, Glassmorphism)
