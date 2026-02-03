@@ -18,7 +18,7 @@ function App() {
     <div className="app-container">
       <header className="animate-fade-in">
         <h1>Density Lab</h1>
-        <p>Interactive explorations of the Gaussian Distribution & Score Functions</p>
+        <p>Interactive visualizations of Score Matching and Diffusion Models, from Gaussian fundamentals to SMDAE</p>
       </header>
 
       <nav className="tabs-container animate-fade-in">
