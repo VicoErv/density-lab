@@ -66,8 +66,8 @@ const ForwardDiffusion = () => {
     }, [sigma]);
 
     return (
-        <div style={{ height: '100%', padding: '1rem', display: 'flex', flexDirection: 'column' }}>
-            <div style={{ flex: 1, minHeight: '300px', position: 'relative', display: 'flex', justifyContent: 'center' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', padding: '1rem' }}>
+            <div style={{ height: '220px', position: 'relative', display: 'flex', justifyContent: 'center', flexShrink: 0 }}>
                 <canvas
                     ref={canvasRef}
                     width={800}
