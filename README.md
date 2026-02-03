@@ -30,6 +30,10 @@ A premium, interactive web application designed to build a deep intuition for co
 - **Intuition**: $s(x) = \nabla \log p(x)$ points to the peak.
 - **Interactive**: Watch the "score field" (vector arrows) pull points toward the data mode. Essential for understanding Diffusion Models and Energy-Based Models.
 
+### 7. Pseudo-Likelihood (Besag, 1974)
+- **Intuition**: Maximize individual conditional likelihoods $p(x_i | x_{-i})$ instead of the full joint.
+- **Interactive**: Observe conditional Gaussian slices and watch the product reach its max at the true parameter value. Efficient for models with intractable normalizers.
+
 ## 🚀 Tech Stack
 - **Framework**: React (Vite)
 - **Styling**: Vanilla CSS (Modern design system, Dark Mode, Glassmorphism)

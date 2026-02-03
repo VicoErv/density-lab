@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import { Activity, BarChart, AreaChart, Target, Layers, Info, Wind, Database } from 'lucide-react';
+import { Activity, BarChart, AreaChart, Target, Layers, Info, Wind, Database, Zap } from 'lucide-react';
 import Gaussian1D from './labs/Gaussian1D';
 import SamplingConvergence from './labs/SamplingConvergence';
 import CDFIntegration from './labs/CDFIntegration';
 import LikelihoodScorer from './labs/LikelihoodScorer';
 import Multivariate2D from './labs/Multivariate2D';
 import ScoreMatching from './labs/ScoreMatching';
+import PseudoLikelihood from './labs/PseudoLikelihood';
 
 function App() {
   const [activeTab, setActiveTab] = useState('gaussian');
@@ -98,6 +99,14 @@ function App() {
               icon={<Wind size={24} color="#f472b6" />}
             >
               <ScoreMatching />
+            </LabCard>
+
+            <LabCard
+              title="Pseudo-Likelihood"
+              description="Maximizing the product of marginal conditionals (Besag, 1974) to estimate parameters without the joint constant."
+              icon={<Zap size={24} color="#3b82f6" />}
+            >
+              <PseudoLikelihood />
             </LabCard>
 
             <LabCard
