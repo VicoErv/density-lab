@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Activity, BarChart, AreaChart, Target, Layers, Info, Wind, Database, Zap, RefreshCw, Equal, Filter } from 'lucide-react';
+import { Activity, BarChart, AreaChart, Target, Layers, Info, Wind, Database, Zap, RefreshCw, Equal, Filter, Sparkles } from 'lucide-react';
 import Gaussian1D from './labs/Gaussian1D';
 import SamplingConvergence from './labs/SamplingConvergence';
 import CDFIntegration from './labs/CDFIntegration';
@@ -10,6 +10,7 @@ import PseudoLikelihood from './labs/PseudoLikelihood';
 import ForwardDiffusion from './labs/ForwardDiffusion';
 import ISMvsESM from './labs/ISMvsESM';
 import DenoisingScoreMatching from './labs/DenoisingScoreMatching';
+import PointCloudDiffusion from './labs/PointCloudDiffusion';
 
 function App() {
   const [activeTab, setActiveTab] = useState('gaussian');
@@ -144,6 +145,14 @@ function App() {
               icon={<Filter size={24} color="#f472b6" />}
             >
               <DenoisingScoreMatching />
+            </LabCard>
+
+            <LabCard
+              title="2D Point Cloud Diffusion"
+              description="The 'Hello World' of generative models. Watch points evolve from noise into shapes."
+              icon={<Sparkles size={24} color="#10b981" />}
+            >
+              <PointCloudDiffusion />
             </LabCard>
           </div>
         )}
