@@ -1,8 +1,14 @@
-# Density Lab: Interactive Gaussian Visualizer
+# Density & Score Lab: Interactive AI Visualizer
 
 ![Density Lab Hero](https://raw.githubusercontent.com/VicoErv/density-lab/main/image.png)
 
-A premium, interactive web application designed to build a deep intuition for continuous probability distributions, specifically the Gaussian (Normal) distribution.
+A premium, interactive web application designed to build a deep intuition for continuous probability distributions, the Score function, and the foundations of Diffusion Models.
+
+## 🧭 Navigation
+The lab is organized into three specialized tabs:
+1. **Foundations**: Core Gaussian properties, sampling convergence, and CDF calculus.
+2. **Score Theory**: The mathematics of $\nabla \log p(x)$, ISM vs ESM, and Pseudo-Likelihood.
+3. **Diffusion Labs**: Forward SDE processes and Denoising Score Matching (DSM).
 
 ## 🌟 Features
 
@@ -50,7 +56,8 @@ A premium, interactive web application designed to build a deep intuition for co
 - **Framework**: React (Vite)
 - **Styling**: Vanilla CSS (Modern design system, Dark Mode, Glassmorphism)
 - **Plotting**: [Chart.js](https://www.chartjs.org/) + [react-chartjs-2](https://react-chartjs-2.js.org/)
-- **Math**: Box-Muller transform for sampling, Error Function approximations for CDF.
+- **Math Rendering**: [KaTeX](https://katex.org/) for real-time LaTeX evaluation.
+- **Math Logic**: Box-Muller transform for sampling, Error Function approximations for CDF.
 
 ## 🛠️ Getting Started
 
