@@ -34,6 +34,10 @@ A premium, interactive web application designed to build a deep intuition for co
 - **Intuition**: Maximize individual conditional likelihoods $p(x_i | x_{-i})$ instead of the full joint.
 - **Interactive**: Observe conditional Gaussian slices and watch the product reach its max at the true parameter value. Efficient for models with intractable normalizers.
 
+### 8. Forward Diffusion
+- **Intuition**: Structured patterns dissolve into Gaussian noise.
+- **Interactive**: Corrupt a "data manifold" with increasing $\sigma$ levels to visualize the forward process used in SDE and Diffusion models.
+
 ## 🚀 Tech Stack
 - **Framework**: React (Vite)
 - **Styling**: Vanilla CSS (Modern design system, Dark Mode, Glassmorphism)

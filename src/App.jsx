@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Activity, BarChart, AreaChart, Target, Layers, Info, Wind, Database, Zap } from 'lucide-react';
+import { Activity, BarChart, AreaChart, Target, Layers, Info, Wind, Database, Zap, RefreshCw } from 'lucide-react';
 import Gaussian1D from './labs/Gaussian1D';
 import SamplingConvergence from './labs/SamplingConvergence';
 import CDFIntegration from './labs/CDFIntegration';
@@ -7,6 +7,7 @@ import LikelihoodScorer from './labs/LikelihoodScorer';
 import Multivariate2D from './labs/Multivariate2D';
 import ScoreMatching from './labs/ScoreMatching';
 import PseudoLikelihood from './labs/PseudoLikelihood';
+import ForwardDiffusion from './labs/ForwardDiffusion';
 
 function App() {
   const [activeTab, setActiveTab] = useState('gaussian');
@@ -107,6 +108,14 @@ function App() {
               icon={<Zap size={24} color="#3b82f6" />}
             >
               <PseudoLikelihood />
+            </LabCard>
+
+            <LabCard
+              title="Forward Diffusion"
+              description="Watch structured data dissolve into pure Gaussian noise. The 'Forward Process' of Diffusion Models."
+              icon={<RefreshCw size={24} color="#06b6d4" />}
+            >
+              <ForwardDiffusion />
             </LabCard>
 
             <LabCard
