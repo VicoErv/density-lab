@@ -239,7 +239,7 @@ const PointCloudDiffusion = () => {
                     </button>
                 </div>
 
-                {/* Info Box */}
+                {/* Info Box with Real-time Formula */}
                 <div style={{
                     background: 'rgba(59, 130, 246, 0.1)',
                     padding: '0.75rem',
@@ -262,6 +262,46 @@ const PointCloudDiffusion = () => {
                             }
                         }}
                     />
+
+                    {/* Real-time Evaluation */}
+                    <div style={{
+                        marginTop: '0.5rem',
+                        padding: '0.5rem',
+                        background: 'rgba(0, 0, 0, 0.2)',
+                        borderRadius: '0.5rem',
+                        fontSize: '0.7rem'
+                    }}>
+                        <div style={{ color: '#10b981', fontWeight: 600, marginBottom: '0.2rem' }}>
+                            Current Parameters (t = {currentT}):
+                        </div>
+                        <div
+                            style={{ opacity: 0.9 }}
+                            ref={(el) => {
+                                if (el && window.katex) {
+                                    // Compute alpha_bar_t using linear beta schedule
+                                    const beta_start = 0.0001;
+                                    const beta_end = 0.02;
+                                    const T = 1000;
+
+                                    let alpha_bar = 1.0;
+                                    for (let i = 0; i < currentT; i++) {
+                                        const beta_i = beta_start + (beta_end - beta_start) * (i / (T - 1));
+                                        alpha_bar *= (1.0 - beta_i);
+                                    }
+
+                                    const sqrt_alpha_bar = Math.sqrt(alpha_bar);
+                                    const sqrt_one_minus_alpha_bar = Math.sqrt(1 - alpha_bar);
+
+                                    window.katex.render(
+                                        `\\sqrt{\\bar{\\alpha}_{${currentT}}} = ${sqrt_alpha_bar.toFixed(4)}, \\quad \\sqrt{1 - \\bar{\\alpha}_{${currentT}}} = ${sqrt_one_minus_alpha_bar.toFixed(4)}`,
+                                        el,
+                                        { throwOnError: false }
+                                    );
+                                }
+                            }}
+                        />
+                    </div>
+
                     <div style={{ fontSize: '0.7rem', color: 'var(--text-secondary)', marginTop: '0.3rem' }}>
                         Watch points evolve from structured data (t=0) to pure Gaussian noise (t=1000)
                     </div>
