@@ -29,8 +29,20 @@ const PointCloudDiffusion = () => {
         if (!canvas) return;
 
         const ctx = canvas.getContext('2d');
-        const width = canvas.width;
-        const height = canvas.height;
+
+        // Get the display size
+        const rect = canvas.getBoundingClientRect();
+        const dpr = window.devicePixelRatio || 1;
+
+        // Set the actual canvas size (accounting for device pixel ratio)
+        canvas.width = rect.width * dpr;
+        canvas.height = rect.height * dpr;
+
+        // Scale the context to match device pixel ratio
+        ctx.scale(dpr, dpr);
+
+        const width = rect.width;
+        const height = rect.height;
 
         // Clear canvas
         ctx.fillStyle = '#0d0f14';
@@ -64,7 +76,7 @@ const PointCloudDiffusion = () => {
 
             ctx.fillStyle = `rgb(${r}, ${g}, ${b})`;
             ctx.beginPath();
-            ctx.arc(screenX, screenY, 2, 0, 2 * Math.PI);
+            ctx.arc(screenX, screenY, 2.5, 0, 2 * Math.PI);
             ctx.fill();
         });
 
@@ -119,8 +131,6 @@ const PointCloudDiffusion = () => {
             <div style={{ height: '400px', position: 'relative', display: 'flex', justifyContent: 'center', flexShrink: 0, overflow: 'hidden', borderRadius: '1rem', border: '1px solid var(--border-color)' }}>
                 <canvas
                     ref={canvasRef}
-                    width={600}
-                    height={400}
                     style={{ width: '100%', height: '100%', borderRadius: '1rem' }}
                 />
             </div>
