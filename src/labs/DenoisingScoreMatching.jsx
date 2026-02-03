@@ -114,7 +114,8 @@ const DenoisingScoreMatching = () => {
                     display: 'flex',
                     flexDirection: 'column',
                     justifyContent: 'center',
-                    alignItems: 'center'
+                    alignItems: 'center',
+                    overflow: 'hidden'
                 }}>
                     {/* Target Vector (points to mode) */}
                     <div style={{
