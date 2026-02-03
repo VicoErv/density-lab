@@ -91,8 +91,8 @@ const DenoisingScoreMatching = () => {
     const dsmLoss = 0.5 * Math.pow(modelScore - targetScore, 2);
 
     return (
-        <div style={{ height: '100%', padding: '1rem', display: 'flex', flexDirection: 'column' }}>
-            <div style={{ flex: 1, minHeight: 0, position: 'relative' }}>
+        <div style={{ height: '100%', padding: '1rem', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+            <div style={{ height: '220px', position: 'relative', flexShrink: 0 }}>
                 <ReactChart type='line' data={chartData} options={{
                     responsive: true,
                     maintainAspectRatio: false,
