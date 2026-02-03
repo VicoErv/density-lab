@@ -67,11 +67,11 @@ const ForwardDiffusion = () => {
 
     return (
         <div style={{ height: '100%', padding: '1rem', display: 'flex', flexDirection: 'column' }}>
-            <div style={{ flex: 1, minHeight: 0, position: 'relative', display: 'flex', justifyContent: 'center' }}>
+            <div style={{ flex: 1, minHeight: '300px', position: 'relative', display: 'flex', justifyContent: 'center' }}>
                 <canvas
                     ref={canvasRef}
-                    width={400}
-                    height={200}
+                    width={800}
+                    height={400}
                     style={{ width: '100%', height: '100%', borderRadius: '1rem', objectFit: 'cover', border: '1px solid var(--border-color)' }}
                 />
             </div>
