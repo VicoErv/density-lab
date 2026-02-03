@@ -26,13 +26,19 @@ function App() {
           className={`tab-button ${activeTab === 'gaussian' ? 'active' : ''}`}
           onClick={() => setActiveTab('gaussian')}
         >
-          Gaussian Foundations
+          Foundations
         </button>
         <button
           className={`tab-button ${activeTab === 'score' ? 'active' : ''}`}
           onClick={() => setActiveTab('score')}
         >
-          Score-based Modeling
+          Score Theory
+        </button>
+        <button
+          className={`tab-button ${activeTab === 'diffusion' ? 'active' : ''}`}
+          onClick={() => setActiveTab('diffusion')}
+        >
+          Diffusion Labs
         </button>
       </nav>
 
@@ -106,31 +112,35 @@ function App() {
 
             <LabCard
               title="Pseudo-Likelihood"
-              description="Maximizing the product of marginal conditionals (Besag, 1974) to estimate parameters without the joint constant."
+              description="Maximizing conditional products (Besag, 1974) to estimate parameters without the constant."
               icon={<Zap size={24} color="#3b82f6" />}
             >
               <PseudoLikelihood />
             </LabCard>
 
             <LabCard
+              title="ISM vs ESM Identity"
+              description="Visualizing why J_ESM = J_ISM + C. Matching scores without knowing ground-truth density."
+              icon={<Equal size={24} color="#f472b6" />}
+            >
+              <ISMvsESM />
+            </LabCard>
+          </div>
+        )}
+
+        {activeTab === 'diffusion' && (
+          <div className="lab-grid fade-in">
+            <LabCard
               title="Forward Diffusion"
-              description="Watch structured data dissolve into pure Gaussian noise. The 'Forward Process' of Diffusion Models."
+              description="Watch structured data dissolve into noise. The 'Forward Process' of Diffusion Models."
               icon={<RefreshCw size={24} color="#06b6d4" />}
             >
               <ForwardDiffusion />
             </LabCard>
 
             <LabCard
-              title="ISM vs ESM Identity"
-              description="Visualizing the identity J_ESM = J_ISM + C. Matching scores without knowing the true log-density."
-              icon={<Equal size={24} color="#f472b6" />}
-            >
-              <ISMvsESM />
-            </LabCard>
-
-            <LabCard
               title="Denoising Score Matching"
-              description="The foundation of Diffusion. Learning to guess how to move from noisy x̃ back to clean x."
+              description="The Core of Diffusion. Learning to move from noisy x̃ back to clean x using target scores."
               icon={<Filter size={24} color="#f472b6" />}
             >
               <DenoisingScoreMatching />

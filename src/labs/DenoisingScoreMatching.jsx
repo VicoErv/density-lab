@@ -150,38 +150,39 @@ const DenoisingScoreMatching = () => {
                 </div>
             </div>
 
-            <div className="controls" style={{ marginTop: '1.5rem' }}>
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
-                    <div className="control-group">
-                        <label className="control-label">Clean Data (x) <span className="control-value">{cleanX.toFixed(1)}</span></label>
+            <div className="controls" style={{ marginTop: '1.5rem', borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: '1rem' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem', marginBottom: '1rem' }}>
+                    <div className="control-group" style={{ margin: 0 }}>
+                        <label className="control-label" style={{ fontSize: '0.7rem' }}>x (Clean) <span className="control-value">{cleanX.toFixed(1)}</span></label>
                         <input type="range" min="-3" max="3" step="0.1" value={cleanX} onChange={(e) => setCleanX(parseFloat(e.target.value))} />
                     </div>
-                    <div className="control-group">
-                        <label className="control-label">Noise Scale (σ) <span className="control-value">{sigma.toFixed(2)}</span></label>
+                    <div className="control-group" style={{ margin: 0 }}>
+                        <label className="control-label" style={{ fontSize: '0.7rem' }}>σ (Noise) <span className="control-value">{sigma.toFixed(2)}</span></label>
                         <input type="range" min="0.5" max="2" step="0.05" value={sigma} onChange={(e) => setSigma(parseFloat(e.target.value))} />
                     </div>
                 </div>
 
                 <div className="control-group">
-                    <label className="control-label">Noisy Sample (x̃) <span className="control-value" style={{ color: '#f472b6' }}>{noisyX.toFixed(2)}</span></label>
-                    <input type="range" min="-4" max="4" step="0.05" value={noisyX} onChange={(e) => setNoisyX(parseFloat(e.target.value))} />
-                </div>
-
-                <div className="control-group">
-                    <label className="control-label">Model Learning (θ) <span className="control-value" style={{ color: '#f472b6' }}>{modelTheta.toFixed(2)}</span></label>
-                    <input type="range" min="0" max="2" step="0.01" value={modelTheta} onChange={(e) => setModelTheta(parseFloat(e.target.value))} />
+                    <label className="control-label" style={{ color: '#f472b6', fontWeight: 600 }}>Noisy Sample (x̃) <span className="control-value">{noisyX.toFixed(2)}</span></label>
+                    <input type="range" min="-4" max="4" step="0.05" value={noisyX} onChange={(e) => setNoisyX(parseFloat(e.target.value))} style={{ accentColor: '#f472b6' }} />
                 </div>
 
                 <div style={{
-                    background: 'rgba(244, 114, 182, 0.1)',
-                    padding: '0.6rem',
-                    borderRadius: '0.5rem',
-                    textAlign: 'center',
-                    border: '1px solid rgba(244, 114, 182, 0.2)'
+                    display: 'flex',
+                    gap: '1rem',
+                    alignItems: 'center',
+                    background: 'rgba(244, 114, 182, 0.05)',
+                    padding: '0.75rem',
+                    borderRadius: '0.75rem',
+                    border: '1px solid rgba(244, 114, 182, 0.1)'
                 }}>
-                    <div style={{ fontSize: '0.7rem', color: 'var(--text-secondary)' }}>DSM Loss: ½ ‖ ψ(x̃;θ) - ∇log q(x̃|x) ‖²</div>
-                    <div style={{ fontWeight: 800, color: '#f472b6', fontSize: '1.2rem' }}>
-                        {dsmLoss.toFixed(4)}
+                    <div className="control-group" style={{ flex: 1, margin: 0 }}>
+                        <label className="control-label">Model θ <span className="control-value" style={{ color: '#f472b6' }}>{modelTheta.toFixed(2)}</span></label>
+                        <input type="range" min="0" max="2" step="0.01" value={modelTheta} onChange={(e) => setModelTheta(parseFloat(e.target.value))} style={{ accentColor: '#f472b6' }} />
+                    </div>
+                    <div style={{ textAlign: 'right', minWidth: '80px' }}>
+                        <div style={{ fontSize: '0.6rem', color: 'var(--text-secondary)', textTransform: 'uppercase' }}>Loss</div>
+                        <div style={{ fontWeight: 800, color: '#f472b6' }}>{dsmLoss.toFixed(4)}</div>
                     </div>
                 </div>
             </div>

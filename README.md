@@ -42,6 +42,10 @@ A premium, interactive web application designed to build a deep intuition for co
 - **Intuition**: $J_{ESM}(\theta) = J_{ISM}(\theta) + C$.
 - **Interactive**: Minimize the Implicit Score Matching objective without ever knowing the ground-truth density. Watch how matching the "divergence" of the score field is equivalent to matching the vectors.
 
+### 10. Denoising Score Matching (DSM)
+- **Intuition**: You can learn the score by learning to "denoise" data.
+- **Interactive**: Perturb a clean sample $x$ with noise to get $\tilde{x}$. The DSM objective trains the model to point from $\tilde{x}$ back to $x$, which is equivalent to estimating the score of the data distribution.
+
 ## 🚀 Tech Stack
 - **Framework**: React (Vite)
 - **Styling**: Vanilla CSS (Modern design system, Dark Mode, Glassmorphism)
