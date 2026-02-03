@@ -129,7 +129,16 @@ const DenoisingScoreMatching = () => {
                         borderRadius: '2px'
                     }}>
                         <div style={{ position: 'absolute', right: '-4px', top: '-3px', borderTop: '5px solid transparent', borderBottom: '5px solid transparent', borderLeft: '8px solid #ffffff' }} />
-                        <div style={{ position: 'absolute', top: '-20px', left: '0', color: '#ffffff', fontSize: '0.6rem', whiteSpace: 'nowrap' }}>Target Score</div>
+                        <div style={{
+                            position: 'absolute',
+                            top: '-20px',
+                            left: '0',
+                            color: '#ffffff',
+                            fontSize: '0.6rem',
+                            whiteSpace: 'nowrap',
+                            transform: `scaleX(${targetScore > 0 ? 1 : -1})`,
+                            transformOrigin: 'left'
+                        }}>Target Score</div>
                     </div>
 
                     {/* Model Prediction */}
@@ -145,7 +154,16 @@ const DenoisingScoreMatching = () => {
                         borderRadius: '2px'
                     }}>
                         <div style={{ position: 'absolute', right: '-4px', top: '-3px', borderTop: '5px solid transparent', borderBottom: '5px solid transparent', borderLeft: '8px solid #f472b6' }} />
-                        <div style={{ position: 'absolute', top: '10px', left: '0', color: '#f472b6', fontSize: '0.6rem', whiteSpace: 'nowrap' }}>Model Prediction ψ(x̃)</div>
+                        <div style={{
+                            position: 'absolute',
+                            top: '10px',
+                            left: '0',
+                            color: '#f472b6',
+                            fontSize: '0.6rem',
+                            whiteSpace: 'nowrap',
+                            transform: `scaleX(${modelScore > 0 ? 1 : -1})`,
+                            transformOrigin: 'left'
+                        }}>Model Prediction ψ(x̃)</div>
                     </div>
                 </div>
             </div>
