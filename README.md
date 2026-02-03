@@ -52,6 +52,10 @@ The lab is organized into three specialized tabs:
 - **Intuition**: Score Matching is equivalent to Denoising Autoencoders (SMDAE).
 - **Interactive**: Perturb a clean sample $x$ with noise to get $\tilde{x}$. The DSM objective trains the model to point from $\tilde{x}$ back to $x$, which is equivalent to estimating the score of the data distribution.
 
+### 11. 2D Point Cloud Diffusion (Ho et al., 2020)
+- **Intuition**: The "Hello World" of generative models. Watch the full diffusion process in action.
+- **Interactive**: Generate 2D point clouds (circle, spiral, multi-modal, moon) and watch them evolve from pure Gaussian noise to structured shapes. Real-time formula evaluation shows $\sqrt{\bar{\alpha}_t}$ values during animation.
+
 ## 🚀 Tech Stack
 - **Framework**: React (Vite)
 - **Styling**: Vanilla CSS (Modern design system, Dark Mode, Glassmorphism)
