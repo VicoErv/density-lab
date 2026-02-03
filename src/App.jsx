@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Activity, BarChart, AreaChart, Target, Layers, Info, Wind, Database, Zap, RefreshCw } from 'lucide-react';
+import { Activity, BarChart, AreaChart, Target, Layers, Info, Wind, Database, Zap, RefreshCw, Equal } from 'lucide-react';
 import Gaussian1D from './labs/Gaussian1D';
 import SamplingConvergence from './labs/SamplingConvergence';
 import CDFIntegration from './labs/CDFIntegration';
@@ -21,13 +21,13 @@ function App() {
 
       <nav className="tabs-container animate-fade-in">
         <button
-          className={`tab-button ${activeTab === 'gaussian' ? 'active' : ''}`}
+          className={`tab - button ${activeTab === 'gaussian' ? 'active' : ''} `}
           onClick={() => setActiveTab('gaussian')}
         >
           Gaussian Foundations
         </button>
         <button
-          className={`tab-button ${activeTab === 'score' ? 'active' : ''}`}
+          className={`tab - button ${activeTab === 'score' ? 'active' : ''} `}
           onClick={() => setActiveTab('score')}
         >
           Score-based Modeling
@@ -119,21 +119,11 @@ function App() {
             </LabCard>
 
             <LabCard
-              title="Next Visualization Data"
-              description="Placeholder for upcoming data manifold and diffusion path visualizations."
-              icon={<Database size={24} color="var(--text-secondary)" />}
+              title="ISM vs ESM Identity"
+              description="Visualizing the identity J_ESM = J_ISM + C. Matching scores without knowing the true log-density."
+              icon={<Equal size={24} color="#f472b6" />}
             >
-              <div style={{
-                height: '100%',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                color: 'var(--text-secondary)',
-                fontSize: '0.9rem',
-                fontStyle: 'italic'
-              }}>
-                [ Coming Soon: Data Manifold Visualizer ]
-              </div>
+              <ISMvsESM />
             </LabCard>
           </div>
         )}
