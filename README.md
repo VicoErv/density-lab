@@ -85,6 +85,9 @@ This project implements and visualizes concepts from the following foundational 
 - **Vincent, P.** (2011). [A Connection Between Score Matching and Denoising Autoencoders](https://www.iro.umontreal.ca/~vincentp/Publications/smdae_techreport.pdf). *Neural Computation*, 23(7), 1661-1674.
   - Proved that Denoising Autoencoders (DAE) are equivalent to Score Matching under Gaussian noise.
 
+- **Ho, J., Jain, A., & Abbeel, P.** (2020). [Denoising Diffusion Probabilistic Models](https://arxiv.org/abs/2006.11239). *NeurIPS 2020*.
+  - Foundational paper on DDPM, establishing connections between diffusion models and denoising score matching with Langevin dynamics.
+
 - **Besag, J.** (1974). Spatial Interaction and the Statistical Analysis of Lattice Systems. *Journal of the Royal Statistical Society: Series B*, 36(2), 192-225.
   - Introduced Pseudo-Likelihood for models with intractable partition functions.
 
