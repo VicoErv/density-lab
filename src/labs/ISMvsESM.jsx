@@ -141,10 +141,10 @@ const ISMvsESM = () => {
                     </div>
                 </div>
                 <div style={{ fontSize: '0.65rem', color: 'var(--text-secondary)', marginTop: '0.4rem', fontStyle: 'italic', textAlign: 'center' }}>
-                    *Note: ESM = ISM + C. Watch them move together as you minimize the loss!
+                    *Note: ESM = ISM + C (Hyvärinen, 2005). Watch them move together as you minimize the loss!
                 </div>
             </div>
-        </div>
+        </div >
     );
 };
 

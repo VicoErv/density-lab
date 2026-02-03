@@ -197,6 +197,11 @@ const DenoisingScoreMatching = () => {
                     gap: '0.5rem'
                 }}>
                     <div
+                        style={{ fontSize: '0.75rem', opacity: 0.8, color: '#f472b6', fontWeight: 600, marginBottom: '0.2rem' }}
+                    >
+                        SMDAE (Vincent, 2011)
+                    </div>
+                    <div
                         style={{ fontSize: '0.75rem', opacity: 0.6 }}
                         ref={(el) => {
                             if (el && window.katex) {

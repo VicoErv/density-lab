@@ -120,7 +120,7 @@ function App() {
 
             <LabCard
               title="ISM vs ESM Identity"
-              description="Visualizing why J_ESM = J_ISM + C. Matching scores without knowing ground-truth density."
+              description="Score Matching (Hyvärinen, 2005). Visualizing why J_ESM = J_ISM + C without ground-truth density."
               icon={<Equal size={24} color="#f472b6" />}
             >
               <ISMvsESM />
@@ -140,7 +140,7 @@ function App() {
 
             <LabCard
               title="Denoising Score Matching"
-              description="The Core of Diffusion. Learning to move from noisy x̃ back to clean x using target scores."
+              description="SMDAE (Vincent, 2011). Learning the score by reversing Gaussian corruption."
               icon={<Filter size={24} color="#f472b6" />}
             >
               <DenoisingScoreMatching />

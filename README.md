@@ -44,12 +44,12 @@ The lab is organized into three specialized tabs:
 - **Intuition**: Structured patterns dissolve into Gaussian noise.
 - **Interactive**: Corrupt a "data manifold" with increasing $\sigma$ levels to visualize the forward process used in SDE and Diffusion models.
 
-### 9. ISM vs ESM Identity
+### 9. ISM vs ESM Identity (Hyvärinen, 2005)
 - **Intuition**: $J_{ESM}(\theta) = J_{ISM}(\theta) + C$.
 - **Interactive**: Minimize the Implicit Score Matching objective without ever knowing the ground-truth density. Watch how matching the "divergence" of the score field is equivalent to matching the vectors.
 
-### 10. Denoising Score Matching (DSM)
-- **Intuition**: You can learn the score by learning to "denoise" data.
+### 10. Denoising Score Matching (Vincent, 2011)
+- **Intuition**: Score Matching is equivalent to Denoising Autoencoders (SMDAE).
 - **Interactive**: Perturb a clean sample $x$ with noise to get $\tilde{x}$. The DSM objective trains the model to point from $\tilde{x}$ back to $x$, which is equivalent to estimating the score of the data distribution.
 
 ## 🚀 Tech Stack
@@ -75,5 +75,18 @@ npm run dev
 npm run build
 ```
 
-## 📜 License
+## � References
+
+This project implements and visualizes concepts from the following foundational papers:
+
+- **Hyvärinen, A.** (2005). [Estimation of Non-Normalized Statistical Models by Score Matching](https://jmlr.org/papers/v6/hyvarinen05a.html). *Journal of Machine Learning Research*, 6(24), 695-709.
+  - Introduced Score Matching and the ISM/ESM equivalence for learning unnormalized models.
+
+- **Vincent, P.** (2011). [A Connection Between Score Matching and Denoising Autoencoders](https://www.iro.umontreal.ca/~vincentp/Publications/smdae_techreport.pdf). *Neural Computation*, 23(7), 1661-1674.
+  - Proved that Denoising Autoencoders (DAE) are equivalent to Score Matching under Gaussian noise.
+
+- **Besag, J.** (1974). Spatial Interaction and the Statistical Analysis of Lattice Systems. *Journal of the Royal Statistical Society: Series B*, 36(2), 192-225.
+  - Introduced Pseudo-Likelihood for models with intractable partition functions.
+
+## �📜 License
 MIT
