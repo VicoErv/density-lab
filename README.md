@@ -1,5 +1,7 @@
 # Density Lab: Interactive Gaussian Visualizer
 
+![Density Lab Hero](./image.png)
+
 A premium, interactive web application designed to build a deep intuition for continuous probability distributions, specifically the Gaussian (Normal) distribution.
 
 ## 🌟 Features
@@ -34,7 +36,7 @@ A premium, interactive web application designed to build a deep intuition for co
 
 ```bash
 # Clone the repository
-git clone <repo-url>
+git clone https://github.com/VicoErv/density-lab.git
 
 # Install dependencies
 npm install
